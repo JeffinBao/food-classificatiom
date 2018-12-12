@@ -172,6 +172,8 @@ def main(train):
         print('Please choose train(True) or load pre-trained model(False)')
         exit(0)
 
+    #TODO: add accuracy, recalls, percision
+    #TODO: use matplotlib show confuse matrix
     pred_val_y = model.predict_generator(valid_generator, verbose=1)
     matrix = confusion_matrix(valid_y.argmax(axis=1), pred_val_y.argmax(axis=1))
     print(matrix)
